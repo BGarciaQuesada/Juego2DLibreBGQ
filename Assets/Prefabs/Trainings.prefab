@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3432580833251725042}
   - component: {fileID: 9029121923267762402}
   m_Layer: 0
-  m_Name: Interactable
+  m_Name: Trainings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
