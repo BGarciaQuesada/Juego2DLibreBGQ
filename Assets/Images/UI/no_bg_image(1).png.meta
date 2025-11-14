@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 1c99d32893a528044bda8a5582266392
+guid: 03ed9c1dd14bddd40aaffa949e980db1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4635128286483884803
-    second: MushroomWanted 1_0
+      213: -9213334024800318264
+    second: no_bg_image(1)_0
+  - first:
+      213: 7795650102834901431
+    second: no_bg_image(1)_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,30 +112,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MushroomWanted 1_0
+      name: no_bg_image(1)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 138
-        height: 157
+        x: 66
+        y: 396
+        width: 419
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 30bac3c5e98435040800000000000000
-      internalID: 4635128286483884803
+      spriteID: 8ccc1cec489a32080800000000000000
+      internalID: -9213334024800318264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: no_bg_image(1)_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 66
+        width: 406
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b136b42776bf2c60800000000000000
+      internalID: 7795650102834901431
       vertices: []
       indices: 
       edges: []
@@ -161,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MushroomWanted 1_0: 4635128286483884803
+      no_bg_image(1)_0: -9213334024800318264
+      no_bg_image(1)_1: 7795650102834901431
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

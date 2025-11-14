@@ -11,8 +11,6 @@ public class StatChange : MonoBehaviour
     public int strengthChange;
     public int moneyChange;
 
-    private bool playerNearby;
-
     public void Interact()
     {
         Debug.Log("El jugador ha usado el objeto.");
@@ -31,21 +29,17 @@ public class StatChange : MonoBehaviour
     {
         // ¿Está player cerca? Mostrar stats que da/consume
         if (!other.CompareTag("Player")) return;
-
-        playerNearby = true;
-        ShowHint();
+        CreateHintText();
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         // ¿Se ha ido player? adiós cartelito
         if (!other.CompareTag("Player")) return;
-
-        playerNearby = false;
         InteractionHint.Instance?.HideHint();
     }
 
-    private void ShowHint()
+    private void CreateHintText()
     {
         // Si no existe cartel, fuera
         if (InteractionHint.Instance == null) return;

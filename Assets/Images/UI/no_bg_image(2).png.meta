@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6c80d5a3b6e1de7409d81ec52caa5620
+guid: 210f0c3d04458764b91a4a4ac792d442
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9194377052083040473
-    second: GoblinWanted_0
+      213: 8798440022675811519
+    second: no_bg_image(2)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,30 +109,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GoblinWanted_0
+      name: no_bg_image(2)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 198
-        height: 142
+        x: 3
+        y: 2
+        width: 115
+        height: 113
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 72f4697f8c2076080800000000000000
-      internalID: -9194377052083040473
+      spriteID: fbceb21a5965a1a70800000000000000
+      internalID: 8798440022675811519
       vertices: []
       indices: 
       edges: []
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GoblinWanted_0: -9194377052083040473
+      no_bg_image(2)_0: 8798440022675811519
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
