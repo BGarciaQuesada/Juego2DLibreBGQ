@@ -50,6 +50,11 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
+    public bool OnFloor()
+    {
+        return m_grounded;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.TryGetComponent(out StatChange interactable))

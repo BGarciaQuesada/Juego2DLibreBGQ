@@ -11,6 +11,11 @@ public class StatManager : MonoBehaviour
     [SerializeField] int defense = 10;
     [SerializeField] int money = 0;
 
+    public int GetEnergy() => energy;
+    public int GetStrength() => strength;
+    public int GetDefense() => defense;
+    public int GetMoney() => money;
+
     private void Awake()
     {
         // Singleton
