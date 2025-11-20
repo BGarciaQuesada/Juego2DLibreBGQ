@@ -1,97 +1,134 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour
+{
+    [Header("Movimiento")]
+    [SerializeField] float moveSpeed = 4f;
+    [SerializeField] float jumpForce = 7.5f;
 
-    [SerializeField] float      m_speed = 4.0f;
-    [SerializeField] float      m_jumpForce = 7.5f;
+    private Animator anim;
+    private Rigidbody2D rb;
 
-    private Animator            m_animator;
-    private Rigidbody2D         m_body2d;
-    private Sensor_Player       m_groundSensor;
-    private bool                m_grounded = false;
+    private Sensor_Player groundSensor;
+    private bool grounded = false;
+    private Vector2 moveInput;
 
-    private Vector2             m_moveInput;
-    private StatChange          nearbyInteractable;
-
-    // Obtener componentes básicos
-    void Start () {
-        m_animator = GetComponent<Animator>();
-        m_body2d = GetComponent<Rigidbody2D>();
-        m_groundSensor = transform.Find("PlayerSensor").GetComponent<Sensor_Player>();
+    private bool inCombatMode = false;  // idle alternativo, tendré que crear un scene manager entre escenas para cambiar de idle pero bleh
+    private bool canMove = true;        // se desactiva si está muerto
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        groundSensor = transform.Find("PlayerSensor").GetComponent<Sensor_Player>();
     }
 
-    // --- Moverse ---
+    // --- INPUTS ---
     void OnMove(InputValue value)
     {
-        m_moveInput = value.Get<Vector2>();
+        moveInput = value.Get<Vector2>();
     }
 
-    // --- Saltar ---
     void OnJump()
     {
-        if (m_grounded)
-        {
-            m_animator.SetTrigger("Jump");
-            m_grounded = false;
-            m_animator.SetBool("Grounded", m_grounded);
-            m_body2d.linearVelocity = new Vector2(m_body2d.linearVelocity.x, m_jumpForce);
-            m_groundSensor.Disable(0.2f);
-        }
+        if (!grounded || !canMove) return;
+
+        anim.SetTrigger("Jump");
+        grounded = false;
+        anim.SetBool("Grounded", false);
+
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+
+        // Evitar detección de suelo por un tiempo
+        groundSensor.Disable(0.2f);
     }
 
-    // --- Interactuar ---
-    void OnInteract(InputValue value)
+    void OnAttack(InputValue value)
     {
-        if (nearbyInteractable != null)
-        {
-            nearbyInteractable.Interact();
-        }
+        if (!canMove) return;
+
+        // PlayerCombat ya se encarga del ataque
+        // Literal solo existe para el Input System
     }
 
-    public bool OnFloor()
-    {
-        return m_grounded;
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.TryGetComponent(out StatChange interactable))
-        {
-            nearbyInteractable = interactable;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.TryGetComponent(out StatChange interactable))
-        {
-            if (nearbyInteractable == interactable)
-                nearbyInteractable = null;
-        }
-    }
-
+    // --- UPDATE ---
+    // Aka. Animaciones y que esté tocando el suelo mientras no este muerto = no se pueda mover
     void Update()
     {
-        if (!m_grounded && m_groundSensor.State())
-        {
-            m_grounded = true;
-            m_animator.SetBool("Grounded", m_grounded);
-        }
-        if (m_grounded && !m_groundSensor.State())
-        {
-            m_grounded = false;
-            m_animator.SetBool("Grounded", m_grounded);
-        }
+        if (!canMove) return;
 
-        float inputX = m_moveInput.x;
-        if (inputX > 0)
-            transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
-        else if (inputX < 0)
-            transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        HandleGroundCheck();
+        HandleMovementAnimations();
+    }
 
-        m_body2d.linearVelocity = new Vector2(inputX * m_speed, m_body2d.linearVelocity.y);
-        m_animator.SetFloat("AirSpeed", m_body2d.linearVelocity.y);
+    void FixedUpdate()
+    {
+        if (!canMove) return;
+
+        Move();
+    }
+
+    // --- MANAGER DE MOVIMIENTOS ---
+    // Aka. Velocidad y ver si está en el suelo
+    private void Move()
+    {
+        float x = moveInput.x;
+
+        // Aplicar movimiento
+        rb.linearVelocity = new Vector2(x * moveSpeed, rb.linearVelocity.y);
+
+        // Rotación del sprite
+        if (x > 0)
+            transform.localScale = new Vector3(-1, 1, 1);
+        else if (x < 0)
+            transform.localScale = new Vector3(1, 1, 1);
+    }
+
+    private void HandleGroundCheck()
+    {
+        if (!grounded && groundSensor.State())
+        {
+            grounded = true;
+            anim.SetBool("Grounded", true);
+        }
+        else if (grounded && !groundSensor.State())
+        {
+            grounded = false;
+            anim.SetBool("Grounded", false);
+        }
+    }
+
+    // --- ANIMACIONES ---
+    private void HandleMovementAnimations()
+    {
+        float x = Mathf.Abs(moveInput.x);
+
+        // Idle de combate
+        anim.SetBool("CombatMode", inCombatMode);
+
+        // Caminar
+        anim.SetBool("Walking", x > 0.1f && grounded);
+
+        // Velocidad vertical
+        anim.SetFloat("AirSpeedY", rb.linearVelocity.y);
+    }
+
+    // --- FUNCIONES DE OTROS SCRIPTS ---
+
+    public void SetCombatMode(bool active)
+    {
+        inCombatMode = active;
+        anim.SetBool("CombatMode", active);
+    }
+
+    public void PlayHurtAnimation()
+    {
+        anim.SetTrigger("Hurt");
+    }
+
+    public void Die()
+    {
+        canMove = false;
+        anim.SetTrigger("Die");
     }
 }
