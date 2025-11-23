@@ -18,7 +18,7 @@ public class MushroomAI : MonoBehaviour
     private Rigidbody2D rb;
 
     private float stateTimer;
-    private bool walkingRight = true;
+    private bool walkingRight = false;
 
     // Estados internos
     private enum State { Idle, Walking }
@@ -33,7 +33,8 @@ public class MushroomAI : MonoBehaviour
         stateTimer = waitTime;
 
         // Inicia en idle
-        anim.Play("Idle");
+        // -> Esto antes se manejaba con anim.Play, pero no paraban de sobreponerse entre ellas, asi que booleana...
+        anim.SetBool("Walking", false);
     }
 
 
@@ -50,7 +51,7 @@ public class MushroomAI : MonoBehaviour
         switch (currentState)
         {
             case State.Idle:
-                anim.Play("Idle");
+                anim.SetBool("Walking", false);
 
                 rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
 
@@ -61,13 +62,13 @@ public class MushroomAI : MonoBehaviour
                 break;
 
             case State.Walking:
-                anim.Play("Run");
+                anim.SetBool("Walking", true);
 
                 float direction = walkingRight ? 1f : -1f;
                 rb.linearVelocity = new Vector2(direction * walkSpeed, rb.linearVelocity.y);
 
                 // Girar sprite
-                transform.localScale = new Vector3(walkingRight ? -1f : 1f, 1f, 1f);
+                transform.localScale = new Vector3(walkingRight ? 1f : -1f, 1f, 1f);
 
                 if (stateTimer <= 0)
                 {

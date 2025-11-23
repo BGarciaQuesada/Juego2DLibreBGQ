@@ -41,6 +41,7 @@ public class PlayerCombat : MonoBehaviour
 
     void EnableHitbox()
     {
+        Debug.Log("HITBOX ACTIVADA");
         attackHitbox.SetActive(true);
     }
 

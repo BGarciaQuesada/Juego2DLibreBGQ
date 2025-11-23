@@ -23,7 +23,7 @@ public class MushroomHealth : MonoBehaviour
         ai.isTakingDamage = true;
         currentHP -= dmg;
 
-        anim.SetTrigger("Damaged");
+        anim.SetTrigger("Hurt");
 
         if (currentHP <= 0)
         {

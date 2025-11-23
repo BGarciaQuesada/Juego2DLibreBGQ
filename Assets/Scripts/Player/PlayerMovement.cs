@@ -104,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
         float x = Mathf.Abs(moveInput.x);
 
         // Idle de combate
-        anim.SetBool("CombatMode", inCombatMode);
+        // anim.SetBool("CombatMode", inCombatMode); //WIP
 
         // Caminar
         anim.SetBool("Walking", x > 0.1f && grounded);
