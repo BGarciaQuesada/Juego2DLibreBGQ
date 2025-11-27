@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 2a5aee2b96ab95a468db4fc62c00e90b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6660351988789781306
+    second: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_0
+  - first:
+      213: -9028406437026386706
+    second: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_1
+  - first:
+      213: -2762585500187420133
+    second: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_2
+  - first:
+      213: -2017439628929807298
+    second: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_3
+  - first:
+      213: 3696769111039148986
+    second: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_4
+  - first:
+      213: 4225580318666805469
+    second: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_5
+  - first:
+      213: 5306809412213896762
+    second: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_6
+  - first:
+      213: 5310527933799164019
+    second: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_7
+  - first:
+      213: 5389887695539014886
+    second: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_8
+  - first:
+      213: -1419093717637071917
+    second: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_9
+  - first:
+      213: 7412198328671795237
+    second: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_10
+  - first:
+      213: -8924077726927391509
+    second: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 207
+        width: 42
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cc5e1d772da193a0800000000000000
+      internalID: -6660351988789781306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_1
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 210
+        width: 72
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eec21391e28a4b280800000000000000
+      internalID: -9028406437026386706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_2
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 209
+        width: 78
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a1fa7df1359a9d0800000000000000
+      internalID: -2762585500187420133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_3
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 210
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3cc7d9a85d9004e0800000000000000
+      internalID: -2017439628929807298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_4
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 103
+        width: 67
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab300209bef8d4330800000000000000
+      internalID: 3696769111039148986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_5
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 103
+        width: 62
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd0540869e644aa30800000000000000
+      internalID: 4225580318666805469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_6
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 103
+        width: 53
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3675b13b0395a940800000000000000
+      internalID: 5306809412213896762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_7
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 109
+        width: 72
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37863e7f409c2b940800000000000000
+      internalID: 5310527933799164019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_8
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 3
+        width: 56
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ec0adf5d4abcca40800000000000000
+      internalID: 5389887695539014886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_9
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 6
+        width: 67
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dbf04158cd5e4ce0800000000000000
+      internalID: -1419093717637071917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_10
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 8
+        width: 67
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 528f931cb1b6dd660800000000000000
+      internalID: 7412198328671795237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_11
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 6
+        width: 67
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be47482d69e472480800000000000000
+      internalID: -8924077726927391509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_0: -6660351988789781306
+      Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_1: -9028406437026386706
+      Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_10: 7412198328671795237
+      Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_11: -8924077726927391509
+      Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_2: -2762585500187420133
+      Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_3: -2017439628929807298
+      Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_4: 3696769111039148986
+      Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_5: 4225580318666805469
+      Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_6: 5306809412213896762
+      Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_7: 5310527933799164019
+      Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_8: 5389887695539014886
+      Screenshot_2025-11-27_at_14-22-52_Vector_Pixel_Art_icons_set_of_8-bit_set_of_diamond_weapon_heart_fire_skull_etc._Level_Up._Pixel_loot_items_award_objects_for_retro_video_game_design._Video_game_sprit_9: -1419093717637071917
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -33,7 +33,6 @@ public class StatManager : MonoBehaviour
     {
         // --- Validación de recursos ---
         // Si el cambio es negativo (consumo), comprobar si el jugador tiene suficiente -> Sino, return
-        // PREGUNTAR SI QUEDA MÁS LIMPIO HACER UN MÉTODO APARTE SOLO PARA ESTO O ES CONSUMO INNECESARIO
         if (energy + energyChange < 0)
         {
             Debug.Log("No hay suficiente energía.");
@@ -53,5 +52,7 @@ public class StatManager : MonoBehaviour
         this.money += moneyChange;
 
         Debug.Log($"Stats -> Energy: {energy}, Strength: {strength}, Defense: {defense}, Money: {money}");
+
+        StatsUI.Instance?.Refresh();
     }
 }

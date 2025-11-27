@@ -11,6 +11,8 @@ public class StatChange : MonoBehaviour
     public int strengthChange;
     public int moneyChange;
 
+    PlayerMovement pm;
+
     public void Interact()
     {
         Debug.Log("El jugador ha usado el objeto.");
@@ -29,6 +31,13 @@ public class StatChange : MonoBehaviour
     {
         // ¿Está player cerca? Mostrar stats que da/consume
         if (!other.CompareTag("Player")) return;
+
+        if (pm == null)
+            pm = other.GetComponentInParent<PlayerMovement>();
+
+        if (pm != null)
+            pm.SetInteractable(this);
+
         CreateHintText();
     }
 
@@ -36,6 +45,14 @@ public class StatChange : MonoBehaviour
     {
         // ¿Se ha ido player? adiós cartelito
         if (!other.CompareTag("Player")) return;
+
+        PlayerMovement pm = other.GetComponent<PlayerMovement>();
+        if (pm == null)
+            pm = other.GetComponentInParent<PlayerMovement>();
+
+        if (pm != null)
+            pm.SetInteractable(null);
+
         InteractionHint.Instance?.HideHint();
     }
 
