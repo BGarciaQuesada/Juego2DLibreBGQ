@@ -7,7 +7,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float moveSpeed = 4f;
     [SerializeField] float jumpForce = 7.5f;
 
-    private StatChange currentInteractable;
+    // MonoBehavior porque puede ser StatChange o ChangeScene
+    private MonoBehaviour currentInteractable;
 
     private Animator anim;
     private Rigidbody2D rb;
@@ -18,6 +19,14 @@ public class PlayerMovement : MonoBehaviour
 
     private bool inCombatMode = false;  // idle alternativo, tendré que crear un scene manager entre escenas para cambiar de idle pero bleh
     private bool canMove = true;        // se desactiva si está muerto
+
+    public static PlayerMovement Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -56,15 +65,17 @@ public class PlayerMovement : MonoBehaviour
     // No se en qué momento borré esto, creo que fue al duplicar el código para hacer el del combate demonios
     void OnInteract(InputValue value)
     {
-        if (value.isPressed)
+        if (value.isPressed && currentInteractable != null)
         {
-            currentInteractable?.Interact();
+            // Obtener metodo Interact si lo tiene y llamarlo
+            var method = currentInteractable.GetType().GetMethod("Interact");
+            method?.Invoke(currentInteractable, null);
         }
     }
 
-    public void SetInteractable(StatChange sc)
+    public void SetInteractable(MonoBehaviour interactable)
     {
-        currentInteractable = sc;
+        currentInteractable = interactable;
     }
 
 

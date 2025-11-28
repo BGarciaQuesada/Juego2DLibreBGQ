@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MushroomAI : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class MushroomAI : MonoBehaviour
     [Header("Estado")]
     public bool isDead = false;
     public bool isTakingDamage = false;
+
+    [SerializeField] float delayBeforeReturn = 2f; // tiempo antes de volver
 
     private Animator anim;
     private Rigidbody2D rb;
@@ -119,14 +123,5 @@ public class MushroomAI : MonoBehaviour
 
         // Suponemos que tienes un MushroomHealth que maneja la vida
         GetComponent<MushroomHealth>()?.TakeDamage(dmg);
-    }
-
-    public void Die()
-    {
-        isDead = true;
-        anim.SetTrigger("Death");
-        rb.linearVelocity = Vector2.zero;
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
     }
 }
