@@ -1,19 +1,18 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MushroomAI : EnemyBaseAI
 {
     [Header("Movimiento")]
-    public float walkSpeed = 1f;
+    public float moveSpeed = 1f;
     public float waitTime = 2f;
     public float walkTime = 3f;
-
-    private float stateTimer;
-    private bool walkingRight = false;
+    
+    private bool facingRight = false;
 
     private enum State { Idle, Walking }
     private State currentState = State.Idle;
+    private float stateTimer;
 
 
     // Protected para que solo se vean en la misma línea de heredación
@@ -48,14 +47,14 @@ public class MushroomAI : EnemyBaseAI
 
             case State.Walking:
                 anim.SetBool("Walking", true);
-                float dir = walkingRight ? 1f : -1f;
+                float dir = facingRight ? 1f : -1f;
 
-                rb.linearVelocity = new Vector2(dir * walkSpeed, rb.linearVelocity.y);
-                transform.localScale = new Vector3(walkingRight ? 1 : -1, 1, 1);
+                rb.linearVelocity = new Vector2(dir * moveSpeed, rb.linearVelocity.y);
+                transform.localScale = new Vector3(facingRight ? 1 : -1, 1, 1);
 
                 if (stateTimer <= 0)
                 {
-                    walkingRight = !walkingRight;
+                    facingRight = !facingRight;
                     ChangeState(State.Idle);
                 }
                 break;
