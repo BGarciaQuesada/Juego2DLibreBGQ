@@ -1,22 +1,29 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerDamageReceiver : MonoBehaviour
 {
     // La defensa actua como vida
 
     public float invulnTime = 0.5f;
+    public float deathDelay = 4f;
+
     private bool canBeHit = true;
+    private bool isDead = false;
 
     private Animator anim;
+    private Rigidbody2D rb;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    public void TakeDamage(int rawDamage)
+    // -> NOMBRE CAMBIADO PARA NO CONFUNDIR CON MÉTODO DE ENEMY
+    public void PlayerTakeDamage(int rawDamage)
     {
-        if (!canBeHit) return;
+        if (!canBeHit || isDead) return;
 
         canBeHit = false;
 
@@ -28,7 +35,7 @@ public class PlayerDamageReceiver : MonoBehaviour
         // ¿Ha muerto?
         if (StatManager.Instance.GetDefense() <= 0)
         {
-            Die();
+            PlayerDie();
             return;
         }
 
@@ -40,9 +47,39 @@ public class PlayerDamageReceiver : MonoBehaviour
         canBeHit = true;
     }
 
-    void Die()
+    void PlayerDie()
     {
+        if (isDead) return;
+        isDead = true;
+
         anim.SetTrigger("Die");
-        GetComponent<PlayerMovement>().enabled = false;
+
+        // Quitar control
+        var pm = GetComponent<PlayerMovement>();
+        if (pm) pm.enabled = false;
+
+        var pc = GetComponent<PlayerCombat>();
+        if (pc) pc.enabled = false;
+
+
+        // Detener movimiento físico
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.bodyType = RigidbodyType2D.Static;
+        }
+
+        // Evitar daño
+        canBeHit = false;
+
+        // Volver a escena de entrenamiento
+        StartCoroutine(ReturnToInbetween());
+    }
+
+    private System.Collections.IEnumerator ReturnToInbetween()
+    {
+        yield return new WaitForSeconds(deathDelay);
+
+        SceneManager.LoadScene("Inbetween");
     }
 }

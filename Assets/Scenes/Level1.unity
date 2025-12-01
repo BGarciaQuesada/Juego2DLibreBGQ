@@ -1007,13 +1007,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7cab3b8c9c6fe4d91f15abb7c0a563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MushroomAI
+  attackDamage: 5
+  attackDelay: 0.4
   walkSpeed: 3
   waitTime: 3
   walkTime: 4
-  attackDamage: 5
-  isDead: 0
-  isTakingDamage: 0
-  delayBeforeReturn: 2
 --- !u!114 &1109445472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,11 +1021,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1109445464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c152ec9fa55a9e04d8ef7e22db8cc1d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 125b6db42c97131418e8e8ab5fdd5744, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MushroomHealth
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHP: 50
-  delayBeforeReturn: 2
+  isDead: 0
+  isTakingDamage: 0
+  delayBeforeReturn: 4
 --- !u!1001 &1354198792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1504,6 +1504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDamageReceiver
   invulnTime: 0.5
+  deathDelay: 4
 --- !u!114 &1588014718
 MonoBehaviour:
   m_ObjectHideFlags: 0

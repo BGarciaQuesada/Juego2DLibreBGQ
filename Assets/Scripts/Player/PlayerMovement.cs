@@ -148,15 +148,4 @@ public class PlayerMovement : MonoBehaviour
         inCombatMode = active;
         anim.SetBool("CombatMode", active);
     }
-
-    public void PlayHurtAnimation()
-    {
-        anim.SetTrigger("Hurt");
-    }
-
-    public void Die()
-    {
-        canMove = false;
-        anim.SetTrigger("Die");
-    }
 }

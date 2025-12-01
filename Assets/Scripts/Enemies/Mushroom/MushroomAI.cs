@@ -2,77 +2,56 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MushroomAI : MonoBehaviour
+public class MushroomAI : EnemyBaseAI
 {
     [Header("Movimiento")]
     public float walkSpeed = 1f;
     public float waitTime = 2f;
     public float walkTime = 3f;
 
-    [Header("Ataque")]
-    public int attackDamage = 5;
-
-    [Header("Estado")]
-    public bool isDead = false;
-    public bool isTakingDamage = false;
-
-    [SerializeField] float delayBeforeReturn = 2f; // tiempo antes de volver
-
-    private Animator anim;
-    private Rigidbody2D rb;
-
     private float stateTimer;
     private bool walkingRight = false;
 
-    // Estados internos
     private enum State { Idle, Walking }
     private State currentState = State.Idle;
 
 
-    void Start()
+    // Protected para que solo se vean en la misma línea de heredación
+    protected override void Start()
     {
-        anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        // Obtener anim y rigidbody
+        base.Start();
 
         stateTimer = waitTime;
 
-        // Inicia en idle
-        // -> Esto antes se manejaba con anim.Play, pero no paraban de sobreponerse entre ellas, asi que booleana...
+        // Sobreescribir stats
+        attackDamage = 10;
+        GetComponent<EnemyHealth>().maxHP = 100;
+
         anim.SetBool("Walking", false);
     }
 
 
-    void Update()
+    protected override void AIBehaviour()
     {
-        if (isDead || isTakingDamage)
-        {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
-            return;
-        }
-
         stateTimer -= Time.deltaTime;
 
         switch (currentState)
         {
             case State.Idle:
                 anim.SetBool("Walking", false);
-
                 rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
 
                 if (stateTimer <= 0)
-                {
                     ChangeState(State.Walking);
-                }
                 break;
 
             case State.Walking:
                 anim.SetBool("Walking", true);
+                float dir = walkingRight ? 1f : -1f;
 
-                float direction = walkingRight ? 1f : -1f;
-                rb.linearVelocity = new Vector2(direction * walkSpeed, rb.linearVelocity.y);
-
-                // Girar sprite
-                transform.localScale = new Vector3(walkingRight ? 1f : -1f, 1f, 1f);
+                rb.linearVelocity = new Vector2(dir * walkSpeed, rb.linearVelocity.y);
+                transform.localScale = new Vector3(walkingRight ? 1 : -1, 1, 1);
 
                 if (stateTimer <= 0)
                 {
@@ -87,41 +66,6 @@ public class MushroomAI : MonoBehaviour
     private void ChangeState(State newState)
     {
         currentState = newState;
-
-        if (newState == State.Idle)
-            stateTimer = waitTime;
-        else
-            stateTimer = walkTime;
-    }
-
-
-
-    // --- ATAQUE ---
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (isDead || isTakingDamage) return;
-
-        if (other.CompareTag("Player"))
-        {
-            anim.SetTrigger("Attack");
-
-            PlayerDamageReceiver player =
-                other.GetComponent<PlayerDamageReceiver>();
-
-            if (player != null)
-                player.TakeDamage(5); // da�o fijo de la seta
-        }
-    }
-
-    // --- DA�O RECIBIDO ---
-    public void TakeDamage(int dmg)
-    {
-        if (isDead || isTakingDamage) return;
-
-        isTakingDamage = true;
-        anim.SetTrigger("Hurt");
-
-        // Suponemos que tienes un MushroomHealth que maneja la vida
-        GetComponent<MushroomHealth>()?.TakeDamage(dmg);
+        stateTimer = newState == State.Idle ? waitTime : walkTime;
     }
 }

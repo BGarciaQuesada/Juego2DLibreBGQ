@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class PlayerAttackHitbox : MonoBehaviour
 {
+    // -> Actualizado para ser generalizado
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("CHOCÓ CON: " + other.name);
 
         // Busca health en el objeto
-        MushroomHealth enemy = other.GetComponent<MushroomHealth>();
+        EnemyHealth enemy = other.GetComponent<EnemyHealth>();
 
         if (enemy == null)
         {
@@ -23,6 +24,6 @@ public class PlayerAttackHitbox : MonoBehaviour
         int dmg = StatManager.Instance.GetStrength();
         Debug.Log("Aplicando daño a " + enemy.name);
 
-        enemy.TakeDamage(dmg);
+        enemy.EnemyTakeDamage(dmg);
     }
 }
