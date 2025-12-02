@@ -69,6 +69,9 @@ public class PlayerDamageReceiver : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Static;
         }
 
+        OutcomeUI.Instance.ShowMessage("<b>¡Derrota!</b>\nSerá mejor huir mientras puedas...");
+
+
         // Evitar daño
         canBeHit = false;
 

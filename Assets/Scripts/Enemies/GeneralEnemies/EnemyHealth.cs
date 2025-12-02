@@ -61,7 +61,9 @@ public class EnemyHealth : MonoBehaviour
 
         // Ocultar
         StartCoroutine(FadeAndDisable());
-        
+
+        OutcomeUI.Instance.ShowMessage("<b>¡Victoria!</b>\nHora de regresar con la cabeza alta.");
+
         // De vuelta al entrenamiento
         StartCoroutine(ReturnToInbetween());
     }
