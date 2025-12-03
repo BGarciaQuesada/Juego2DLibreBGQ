@@ -73,6 +73,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // El método tiene que ir aquí porque es el que tiene el input manager
+    void OnPause()
+    {
+        PauseManager.Instance.TogglePause();
+    }
+
+
     public void SetInteractable(MonoBehaviour interactable)
     {
         currentInteractable = interactable;
