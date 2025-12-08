@@ -5,6 +5,10 @@ public class PlayerDamageReceiver : MonoBehaviour
 {
     // La defensa actua como vida
 
+    [Header("Sonidos Combate")]
+    [SerializeField] AudioClip hurtSound;
+    [SerializeField] AudioClip deathSound;
+
     public float invulnTime = 0.5f;
     public float deathDelay = 4f;
 
@@ -30,6 +34,8 @@ public class PlayerDamageReceiver : MonoBehaviour
         // Restar defensa al recibir daño
         StatManager.Instance.ChangeStats(0, 0, -rawDamage, 0);
 
+        AudioManager.Instance.PlaySFX(hurtSound);
+
         anim.SetTrigger("Hurt");
 
         // ¿Ha muerto?
@@ -53,6 +59,8 @@ public class PlayerDamageReceiver : MonoBehaviour
         isDead = true;
 
         anim.SetTrigger("Die");
+
+        AudioManager.Instance.PlaySFX(deathSound);
 
         // Quitar control
         var pm = GetComponent<PlayerMovement>();

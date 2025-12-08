@@ -6,6 +6,9 @@ public abstract class EnemyBaseAI : MonoBehaviour
     // Aka. Creo una clase padre AI donde se maneja el daño
     // y cada hijo lo hereda para poner su propio patrón de movimiento
 
+    [Header("Sonidos Combate")]
+    [SerializeField] AudioClip EnemyAttack;
+
     // Esto es por poner algo básico pero cada hijo tiene un daño distinto
     [Header("Daño")]
     public int attackDamage = 5;
@@ -77,6 +80,8 @@ public abstract class EnemyBaseAI : MonoBehaviour
 
         // Ejecutar animación
         anim.SetTrigger("Attack");
+
+        AudioManager.Instance.PlaySFX(EnemyAttack);
 
         // Esperar para la animación
         yield return new WaitForSeconds(attackDelay);

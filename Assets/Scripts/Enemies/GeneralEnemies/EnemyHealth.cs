@@ -8,6 +8,8 @@ public class EnemyHealth : MonoBehaviour
     public int maxHP = 50;
     private int currentHP;
 
+    // public -> para que todo el mundo acceda
+    // hideininpsector -> para que no salga
     [HideInInspector] public bool isDead = false;
     [HideInInspector] public bool isTakingDamage = false;
 
@@ -15,6 +17,10 @@ public class EnemyHealth : MonoBehaviour
     protected EnemyBaseAI ai;
 
     [SerializeField] float delayBeforeReturn = 4f;
+
+    [Header("Sonidos Enemigos Daño")]
+    [SerializeField] AudioClip enemyHurtSound;
+    [SerializeField] AudioClip enemyDeathSound;
 
     void Start()
     {
@@ -32,6 +38,8 @@ public class EnemyHealth : MonoBehaviour
         currentHP -= dmg;
 
         anim.SetTrigger("Hurt");
+        AudioManager.Instance.PlaySFX(enemyHurtSound);
+
 
         if (currentHP <= 0)
         {
@@ -51,6 +59,7 @@ public class EnemyHealth : MonoBehaviour
     {
         isDead = true;
         anim.SetTrigger("Death");
+        AudioManager.Instance.PlaySFX(enemyDeathSound);
 
         // Desactivar colisión
         GetComponent<Collider2D>().enabled = false;
@@ -72,9 +81,11 @@ public class EnemyHealth : MonoBehaviour
     {
         LevelManager.Instance.AdvanceLevel();
         yield return new WaitForSeconds(delayBeforeReturn);
+        if (StatManager.Instance.GetDefense() < 0) StatManager.Instance.SetDefense(10);
         SceneManager.LoadScene("Inbetween");
     }
 
+    // WIP...
     private IEnumerator FadeAndDisable()
     {
         // Espera a que termine la animación de muerte

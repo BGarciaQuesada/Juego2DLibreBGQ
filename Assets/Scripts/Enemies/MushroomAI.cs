@@ -7,7 +7,10 @@ public class MushroomAI : EnemyBaseAI
     public float moveSpeed = 1f;
     public float waitTime = 2f;
     public float walkTime = 3f;
-    
+
+    [Header("Audio Bucle Pasos")]
+    [SerializeField] private AudioSource footsteps;
+
     private bool facingRight = false;
 
     private enum State { Idle, Walking }
@@ -28,6 +31,9 @@ public class MushroomAI : EnemyBaseAI
         GetComponent<EnemyHealth>().maxHP = 100;
 
         anim.SetBool("Walking", false);
+
+        if (footsteps != null)
+            footsteps.loop = true; // asegurar loop
     }
 
 
@@ -41,6 +47,8 @@ public class MushroomAI : EnemyBaseAI
                 anim.SetBool("Walking", false);
                 rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
 
+                HandleFootsteps(false);
+
                 if (stateTimer <= 0)
                     ChangeState(State.Walking);
                 break;
@@ -52,12 +60,30 @@ public class MushroomAI : EnemyBaseAI
                 rb.linearVelocity = new Vector2(dir * moveSpeed, rb.linearVelocity.y);
                 transform.localScale = new Vector3(facingRight ? 1 : -1, 1, 1);
 
+                HandleFootsteps(true);
+
                 if (stateTimer <= 0)
                 {
                     facingRight = !facingRight;
                     ChangeState(State.Idle);
                 }
                 break;
+        }
+    }
+
+    private void HandleFootsteps(bool walking)
+    {
+        if (footsteps == null) return;
+
+        if (walking)
+        {
+            if (!footsteps.isPlaying)
+                footsteps.Play();
+        }
+        else
+        {
+            if (footsteps.isPlaying)
+                footsteps.Stop();
         }
     }
 

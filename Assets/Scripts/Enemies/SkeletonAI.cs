@@ -14,6 +14,12 @@ public class SkeletonAI : EnemyBaseAI
     public float jumpDuration = 1f;
     public Transform[] jumpPoints;
 
+    [Header("Sonidos Singulares")]
+    [SerializeField] AudioClip SkeletonJump;
+
+    [Header("Audio Bucle Pasos")]
+    [SerializeField] private AudioSource footsteps;
+
     // Punto en el que está de entre los dos
     private int targetPoint = 0;
 
@@ -70,6 +76,8 @@ public class SkeletonAI : EnemyBaseAI
 
     private void WalkingBehaviour()
     {
+        HandleFootsteps(true);
+
         // Andar hacia el siguiente punto horizontal
         Vector2 target = jumpPoints[targetPoint].position;
         float directionX = target.x - rb.position.x;
@@ -83,6 +91,7 @@ public class SkeletonAI : EnemyBaseAI
         if (stateTimer <= 0)
         {
             anim.SetBool("Walking", false);
+            HandleFootsteps(false);
             ChangeState(State.Jumping);
         }
     }
@@ -105,6 +114,9 @@ public class SkeletonAI : EnemyBaseAI
 
     private void Jump()
     {
+
+        AudioManager.Instance.PlaySFX(SkeletonJump);
+
         int next = (targetPoint + 1) % jumpPoints.Length;
 
         Vector2 direction = (jumpPoints[next].position - transform.position).normalized;
@@ -135,6 +147,22 @@ public class SkeletonAI : EnemyBaseAI
                 stateTimer = jumpDuration;
                 justEnteredJump = true;
                 break;
+        }
+    }
+
+    private void HandleFootsteps(bool walking)
+    {
+        if (footsteps == null) return;
+
+        if (walking)
+        {
+            if (!footsteps.isPlaying)
+                footsteps.Play();
+        }
+        else
+        {
+            if (footsteps.isPlaying)
+                footsteps.Stop();
         }
     }
 

@@ -7,6 +7,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float moveSpeed = 4f;
     [SerializeField] float jumpForce = 7.5f;
 
+    [Header("Sonidos Singulares")]
+    [SerializeField] AudioClip PlayerJump;
+    [SerializeField] AudioClip PauseSound;
+
+    // Necesito un AudioSource para usar la propiedad volume en los efectos en bucle...
+    [Header("Audio Bucle Pasos")]
+    [SerializeField] private AudioSource footsteps;
+
     // MonoBehavior porque puede ser StatChange o ChangeScene
     private MonoBehaviour currentInteractable;
 
@@ -48,6 +56,8 @@ public class PlayerMovement : MonoBehaviour
         grounded = false;
         anim.SetBool("Grounded", false);
 
+        AudioManager.Instance.PlaySFX(PlayerJump);
+
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
 
         // Evitar detección de suelo por un tiempo
@@ -77,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
     void OnPause()
     {
         PauseManager.Instance.TogglePause();
+        AudioManager.Instance.PlaySFX(PauseSound);
     }
 
 
@@ -94,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
 
         HandleGroundCheck();
         HandleMovementAnimations();
+        HandleFootsteps();
     }
 
     void FixedUpdate()
@@ -118,6 +130,23 @@ public class PlayerMovement : MonoBehaviour
         else if (x < 0)
             transform.localScale = new Vector3(1, 1, 1);
     }
+
+    private void HandleFootsteps()
+    {
+        bool walking = Mathf.Abs(moveInput.x) > 0.1f && grounded;
+
+        if (walking)
+        {
+            if (!footsteps.isPlaying)
+                footsteps.Play();
+        }
+        else
+        {
+            if (footsteps.isPlaying)
+                footsteps.Stop();
+        }
+    }
+
 
     private void HandleGroundCheck()
     {

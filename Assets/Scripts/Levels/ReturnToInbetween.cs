@@ -32,6 +32,7 @@ public class ReturnToInbetween : MonoBehaviour
         interacting = false;
     }
 
+    // Originalmente había un cartelito, ya no, hay que cambiarlo
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;

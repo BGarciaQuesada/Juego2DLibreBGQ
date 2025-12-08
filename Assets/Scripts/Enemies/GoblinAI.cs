@@ -12,6 +12,9 @@ public class GoblinAI : EnemyBaseAI
     public float jumpDuration = 1f;
     public Transform[] jumpPoints;
 
+    [Header("Sonidos Singulares")]
+    [SerializeField] AudioClip GoblinJump;
+
     // Punto en el que está de entre los dos
     private int targetPoint = 0;
 
@@ -91,6 +94,8 @@ public class GoblinAI : EnemyBaseAI
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); // impulso vertical único
 
         targetPoint = next;
+
+        AudioManager.Instance.PlaySFX(GoblinJump);
     }
 
     private void ChangeState(State newState)
