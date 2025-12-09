@@ -7394,6 +7394,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2093182723}
     - target: {fileID: 3227359560593074644, guid: 18d9573dfa6492746b079abc55b4da1e, type: 3}
+      propertyPath: jumpForce
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227359560593074644, guid: 18d9573dfa6492746b079abc55b4da1e, type: 3}
       propertyPath: PauseSound
       value: 
       objectReference: {fileID: 8300000, guid: 30459d9127559224d85db9fb7c647600, type: 3}

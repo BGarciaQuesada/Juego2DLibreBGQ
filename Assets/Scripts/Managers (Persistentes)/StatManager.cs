@@ -66,4 +66,16 @@ public class StatManager : MonoBehaviour
 
         StatsUI.Instance?.Refresh();
     }
+
+    public void ResetStats()
+    {
+        energy = 100;
+        strength = 10;
+        defense = 10;
+        money = 0;
+
+        // Refrescar vista tras cambiar stats
+        StatsUI.Instance?.Refresh();
+    }
+
 }

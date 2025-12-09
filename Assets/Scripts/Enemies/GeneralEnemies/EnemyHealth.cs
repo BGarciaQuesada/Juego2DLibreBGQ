@@ -75,6 +75,14 @@ public class EnemyHealth : MonoBehaviour
         OutcomeUI.Instance.ShowMessage("<b>¡Victoria!</b>\nHora de regresar con la cabeza alta.");
 
         LevelManager.Instance.AdvanceLevel();
+
+        // --- FIN DEL JUEGO ---
+        if (LevelManager.Instance.currentLevel >= LevelManager.Instance.levelScenes.Length)
+        {
+            // 
+            UnityEngine.SceneManagement.SceneManager.LoadScene("EndMenu");
+            return;
+        }
     }
     
     private IEnumerator FadeAndDisable()
