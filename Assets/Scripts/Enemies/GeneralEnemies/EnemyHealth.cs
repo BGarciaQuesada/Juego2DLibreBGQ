@@ -71,21 +71,12 @@ public class EnemyHealth : MonoBehaviour
         // Ocultar
         StartCoroutine(FadeAndDisable());
 
+        // LA VUELTA YA SE MANEJA AQUÍ MEDIANTE BOTÓN
         OutcomeUI.Instance.ShowMessage("<b>¡Victoria!</b>\nHora de regresar con la cabeza alta.");
 
-        // De vuelta al entrenamiento
-        StartCoroutine(ReturnToInbetween());
-    }
-
-    private IEnumerator ReturnToInbetween()
-    {
         LevelManager.Instance.AdvanceLevel();
-        yield return new WaitForSeconds(delayBeforeReturn);
-        if (StatManager.Instance.GetDefense() < 0) StatManager.Instance.SetDefense(10);
-        SceneManager.LoadScene("Inbetween");
     }
-
-    // WIP...
+    
     private IEnumerator FadeAndDisable()
     {
         // Espera a que termine la animación de muerte

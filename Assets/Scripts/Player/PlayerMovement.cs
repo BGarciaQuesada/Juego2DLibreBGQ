@@ -177,11 +177,39 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("AirSpeedY", rb.linearVelocity.y);
     }
 
-    // --- FUNCIONES DE OTROS SCRIPTS ---
-
-    public void SetCombatMode(bool active)
+    void OnCheat(InputValue value)
     {
-        inCombatMode = active;
-        anim.SetBool("CombatMode", active);
+        // Solo responde si la tecla está presionada
+        if (!value.isPressed) return;
+
+        // Averiguamos qué tecla fue
+        string key = Keyboard.current.anyKey.wasPressedThisFrame ? "" : "";
+
+        if (Keyboard.current.digit1Key.wasPressedThisFrame)
+            LoadCheatLevel(0);
+
+        else if (Keyboard.current.digit2Key.wasPressedThisFrame)
+            LoadCheatLevel(1);
+
+        else if (Keyboard.current.digit3Key.wasPressedThisFrame)
+            LoadCheatLevel(2);
     }
+
+    private void LoadCheatLevel(int index)
+    {
+        if (LevelManager.Instance == null) return;
+
+        if (index < 0 || index >= LevelManager.Instance.levelScenes.Length)
+        {
+            Debug.LogWarning("El truco intenta cargar un nivel que no existe.");
+            return;
+        }
+
+        string scene = LevelManager.Instance.levelScenes[index];
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
+        LevelManager.Instance.currentLevel = index; // Actualizar nivel actual
+    }
+
+
 }

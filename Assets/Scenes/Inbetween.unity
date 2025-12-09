@@ -7467,6 +7467,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2892712664568194864, guid: 18d9573dfa6492746b079abc55b4da1e, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2892712664568194864, guid: 18d9573dfa6492746b079abc55b4da1e, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 19bb13334bfec2549894645030d3b10a, type: 3}
+    - target: {fileID: 2892712664568194864, guid: 18d9573dfa6492746b079abc55b4da1e, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3227359560593074644, guid: 18d9573dfa6492746b079abc55b4da1e, type: 3}
       propertyPath: JumpLand
       value: 
@@ -7475,6 +7487,10 @@ PrefabInstance:
       propertyPath: LandJump
       value: 
       objectReference: {fileID: 8300000, guid: b10c034431ae05e4f857f6158071c1ec, type: 3}
+    - target: {fileID: 3227359560593074644, guid: 18d9573dfa6492746b079abc55b4da1e, type: 3}
+      propertyPath: footsteps
+      value: 
+      objectReference: {fileID: 45161910538252055}
     - target: {fileID: 3227359560593074644, guid: 18d9573dfa6492746b079abc55b4da1e, type: 3}
       propertyPath: jumpForce
       value: 5

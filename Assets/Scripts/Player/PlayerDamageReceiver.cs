@@ -77,20 +77,10 @@ public class PlayerDamageReceiver : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Static;
         }
 
+        // LA VUELTA YA SE MANEJA AQUÍ MEDIANTE BOTÓN
         OutcomeUI.Instance.ShowMessage("<b>¡Derrota!</b>\nSerá mejor huir mientras puedas...");
-
 
         // Evitar daño
         canBeHit = false;
-
-        // Volver a escena de entrenamiento
-        StartCoroutine(ReturnToInbetween());
-    }
-
-    private System.Collections.IEnumerator ReturnToInbetween()
-    {
-        yield return new WaitForSeconds(deathDelay);
-
-        SceneManager.LoadScene("Inbetween");
     }
 }
