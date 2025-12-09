@@ -6503,7 +6503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4076eeee866032d488da80b491aab2d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneMusic
-  music: {fileID: 8300000, guid: c352d37567691144b84b297fd36b0530, type: 3}
+  music: {fileID: 8300000, guid: c93fef4b5499eeb40b896a7f491c9614, type: 3}
 --- !u!4 &1897140917
 Transform:
   m_ObjectHideFlags: 0
