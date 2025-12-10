@@ -52,8 +52,7 @@ public class PauseManager : MonoBehaviour
     public void ExitMainMenu()
     {
         Time.timeScale = 1f;
-        // Tengo que crear el menu principal...
-        SceneManager.LoadScene("Inbetween");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void TogglePause()
